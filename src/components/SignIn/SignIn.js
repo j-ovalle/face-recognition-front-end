@@ -19,8 +19,9 @@ class SignIn extends React.Component {
 
     onSubmitSignIn = () => {
         console.log(this.state);
+        this.props.onRouteChange('home');
     }
-    
+
     render() {
         const { onRouteChange } = this.props;
         return (
@@ -39,7 +40,7 @@ class SignIn extends React.Component {
                             </div>
                         </fieldset>
                             <div className="">
-                                <input onClick={() => onRouteChange('home')} className="b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib white" type="submit" value="Sign In" />
+                                <input onClick={this.onSubmitSignIn} className="b ph3 pv2 input-reset ba b--white bg-transparent grow pointer f6 dib white" type="submit" value="Sign In" />
                             </div>
                             <div className="lh-copy mt3">
                                 <p  onClick={() => onRouteChange('register')} className="white f6 link dim black db pointer">Register</p>
